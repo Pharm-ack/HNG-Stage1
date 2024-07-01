@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Geist Sans";
+  background-color: #ece3d4;
+  display: flex;
+  padding: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+h1 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+}
+
+li {
+  list-style-type: none;
+  margin: 10px 0;
+}
+.container {
+  margin-top: 1.5rem;
+  width: 100%;
+  max-width: 28rem;
+}
+
+.profile-picture {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.profile-desc {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.rounded {
+  padding: 1.3rem;
+  border-radius: 0.5rem;
+  background-color: #d4c3aa;
+  color: #372a15;
+}
+
+.gap {
+  margin-top: 1rem;
+}
+
+.rounded h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+}
+
+.rounded ul {
+  margin-top: 0.5rem;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.links {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem;
+  border-radius: 0.5rem;
+  background-color: #d4c3aa;
+  color: #372a15;
+}
+.links a {
+  text-decoration: none;
+  color: #372a15;
+}
+.links a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding: 2rem;
+  }
+}

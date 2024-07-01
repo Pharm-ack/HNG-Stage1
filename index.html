@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Personal Website</title>
+    <link rel="icon" href="img/icons8-favorite-48.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fontsource/geist-sans@5.0.3/600.min.css"
+    />
+    <link href="/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- This is the main content of the website -->
+    <main class="container">
+      <!-- This is the profile Picture -->
+      <div class="profile-picture">
+        <img
+          src="img/oluboi.jpg"
+          alt="Slack Profile Picture"
+          data-testid="slackProfilePicture"
+          style="width: auto; height: auto; border-radius: 50%"
+        />
+      </div>
+
+      <!-- This is the profile description -->
+      <section class="profile-desc">
+        <div class="rounded">
+          <p>Slack Name</p>
+          <p data-testid="slackDisplayName" class="font-semibold">
+            Oluwashina Olumofe
+          </p>
+        </div>
+        <div class="rounded">
+          <p>Current Time (UTC)</p>
+          <p
+            id="currentTime"
+            data-testid="currentTimeUTC"
+            class="font-semibold wrap"
+          >
+            {currentTimeUTC}
+          </p>
+        </div>
+        <div class="rounded">
+          <p>Current Day</p>
+          <p id="currentDay" data-testid="currentDay" class="font-semibold">
+            {currentDay}
+          </p>
+        </div>
+        <div class="rounded">
+          <p>Slack Email</p>
+          <p data-testid="slackEmail" class="font-semibold">
+            olumofe6@gmail.com
+          </p>
+        </div>
+      </section>
+
+      <!-- This is the links section -->
+      <div class="links">
+        <a href="https://hng.tech/learn" target="_blank" data-testid="hngLink"
+          >HNG Learn</a
+        >
+        <a href="https://keyword.dog" target="_blank" data-testid="keywordLink"
+          >Keyword Dog</a
+        >
+        <a
+          href="https://scrapeanyweb.site"
+          target="_blank"
+          data-testid="scrapeanywebLink"
+          >Scrape Any Web</a
+        >
+      </div>
+
+      <!-- This is the goals section -->
+      <section class="rounded gap">
+        <h2>My 2-Year Tech Goals</h2>
+        <ul>
+          <li>
+            Become proficient in ReactJs, NextJs and build complex web
+            applications with it.
+          </li>
+          <li>
+            Learn and master TypeScript to improve code quality and
+            maintainability.
+          </li>
+          <li>
+            Gain experience in cloud computing and deploy my applications to
+            platforms like AWS or Google Cloud.
+          </li>
+          <li>
+            Contribute to open-source projects and build a strong portfolio of
+            projects.
+          </li>
+          <li>
+            Attend tech conferences and meetups to network with industry
+            professionals and stay up-to-date with the latest trends.
+          </li>
+        </ul>
+      </section>
+    </main>
+  </body>
+  <script>
+    function updateDateTime() {
+      const now = new Date();
+
+      // Get the UTC offset for Nigeria (WAT is UTC+1)
+      const nigeriaOffset = 1 * 60;
+
+      // Get the current time in Nigeria
+      const nigeriaTime = new Date(
+        now.getTime() + (nigeriaOffset + now.getTimezoneOffset()) * 60000
+      );
+
+      // Format the date and time
+      const options = {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        hour: "numeric",
+        minute: "numeric",
+        second: "numeric",
+        hour12: true,
+      };
+      const formattedTime = nigeriaTime.toLocaleString("en-US", options);
+      const dayOfWeek = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ][nigeriaTime.getUTCDay()];
+
+      document.getElementById("currentTime").textContent = formattedTime;
+      document.getElementById("currentDay").textContent = dayOfWeek;
+    }
+
+    updateDateTime();
+    setInterval(updateDateTime, 1000);
+  </script>
+</html>
