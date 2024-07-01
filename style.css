@@ -43,6 +43,16 @@ li {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
 }
+.profile-desc p {
+  word-wrap: break-word;
+}
+.profile-picture img {
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 371 / 459;
+  object-fit: cover;
+  border-radius: 8px;
+}
 
 .rounded {
   padding: 1.3rem;
